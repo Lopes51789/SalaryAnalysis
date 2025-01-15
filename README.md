@@ -60,6 +60,7 @@ The following tools were used in this project:
 
 - [MySQL]
 - [MongoDB]
+- [Tableau]
 
 ## :white_check_mark: Requirements ##
 ```bash

@@ -4,6 +4,9 @@ import cleanData
 
 # Clean data and export to json
 df = cleanData.DataFrame("Salary_Data.csv")
+df.convertCategoricalToNumeric()
+df.removeNullValues()
+
 json_file = df.toJson()
 
 
@@ -24,7 +27,7 @@ cursor = conn.cursor()
 # Insert data into MySQL table
 for record in data:
     cursor.execute(
-        "INSERT INTO salaryanalysis.originalsalaries (Age, Gender, EducationLevel, JobTitle, YearsOfExperience, Salary) VALUES (%s, %s, %s, %s, %s, %s)",
+        "INSERT INTO salaryanalysis.cleanedsalaries (Age, Gender, EducationLevel, JobTitle, YearsOfExperience, Salary) VALUES (%s, %s, %s, %s, %s, %s)",
         (record['Age'], record['Gender'], record['Education Level'], record['Job Title'], record['Years of Experience'], record['Salary']) #Age,Gender,Education Level,Job Title,Years of Experience,Salary
     )
 

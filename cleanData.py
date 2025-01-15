@@ -47,8 +47,18 @@ class DataFrame():
 
         return label_encoder
     def removeNullValues(self):
-        return self.df.dropna()
+        self.df = self.df.dropna(how='all')
+        self.df = self.df.fillna(0)
 
 if __name__ == "__main__":
     salary_data = DataFrame("Salary_Data.csv")
+    salary_data.convertCategoricalToNumeric()
+    salary_data.removeNullValues()
+    #salary_data.toJson()
+
+    #print(salary_data.getCorrelation())
+    #print(salary_data.getStats())
+    #print(salary_data.getNullSum())
     salary_data.getDescription()
+
+    print(salary_data.df[salary_data.df.isnull().any(axis=1)])
