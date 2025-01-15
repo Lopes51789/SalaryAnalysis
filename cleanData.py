@@ -27,10 +27,16 @@ class DataFrame():
         return self.df.corr()
     
     def toCsv(self):
-        self.df.to_csv("cleaned_data.csv")
+        return self.df.to_csv("cleaned_data.csv")
 
     def toJson(self):
-        self.df.to_json("cleaned_data.json")
+        filename = "cleaned_data.json"
+        self.df.to_json(filename, orient='records')
+        return filename
+
+    def getColumnNames(self):
+        print("Column names")
+        return self.df.columns
     
     def convertCategoricalToNumeric(self):
         categorical_cols = self.df.select_dtypes(include=['category', 'object']).columns
@@ -45,8 +51,4 @@ class DataFrame():
 
 if __name__ == "__main__":
     salary_data = DataFrame("Salary_Data.csv")
-    print(salary_data.getNullSum()) #salary_data.getNullSum()
-    #salary_data.convertCategoricalToNumeric()
-    #print(salary_data.getCorrelation())
-    salary_data.removeNullValues()
-    print(salary_data.getNullSum())
+    salary_data.getDescription()
