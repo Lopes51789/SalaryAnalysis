@@ -15,8 +15,6 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/Lopes51789/salaryanalysis?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/Lopes51789/salaryanalysis?color=56BEB8">
-
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/Lopes51789/salaryanalysis?color=56BEB8" /> -->
 
   <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/Lopes51789/salaryanalysis?color=56BEB8" /> -->
@@ -78,10 +76,6 @@ $ git clone https://github.com/Lopes51789/salaryanalysis
 # Access
 $ cd salaryanalysis
 ```
-
-## :memo: License ##
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
 <a href="#top">Back to top</a>
