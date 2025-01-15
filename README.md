@@ -67,6 +67,8 @@ The following tools were used in this project:
 ```bash
 $ pip install -r requirements.txt
 
+```
+
 ## :checkered_flag: Starting ##
 
 ```bash
@@ -75,6 +77,7 @@ $ git clone https://github.com/Lopes51789/salaryanalysis
 
 # Access
 $ cd salaryanalysis
+```
 
 ## :memo: License ##
 
