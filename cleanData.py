@@ -45,5 +45,8 @@ class DataFrame():
 
 if __name__ == "__main__":
     salary_data = DataFrame("Salary_Data.csv")
-    salary_data.convertCategoricalToNumeric()
-    print(salary_data.getCorrelation())
+    print(salary_data.getNullSum()) #salary_data.getNullSum()
+    #salary_data.convertCategoricalToNumeric()
+    #print(salary_data.getCorrelation())
+    salary_data.removeNullValues()
+    print(salary_data.getNullSum())
