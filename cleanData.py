@@ -47,18 +47,33 @@ class DataFrame():
 
         return label_encoder
     def removeNullValues(self):
-        self.df = self.df.dropna(how='all')
-        self.df = self.df.fillna(0)
+        self.df.dropna(inplace=True)
 
-if __name__ == "__main__":
+    def removeDuplicateCategories(self):
+        for index, row in self.df.iterrows():
+            # do something with the row
+            if row["Education Level"] == "Bachelor's" or row["Education Level"] == "Master's":
+                self.df.at[index, "Education Level"] += " Degree"
+
+        
+
+
+
+def test():
     salary_data = DataFrame("Salary_Data.csv")
-    salary_data.convertCategoricalToNumeric()
-    salary_data.removeNullValues()
+    
     #salary_data.toJson()
 
     #print(salary_data.getCorrelation())
     #print(salary_data.getStats())
     #print(salary_data.getNullSum())
-    salary_data.getDescription()
+    #salary_data.getDescription()
+    salary_data.removeNullValues()
+    salary_data.removeDuplicateCategories()
+    salary_data.convertCategoricalToNumeric()
 
-    print(salary_data.df[salary_data.df.isnull().any(axis=1)])
+    #print(salary_data.df[salary_data.df.isnull().any(axis=1)])
+
+if __name__ == "__main__":
+    test()
+    pass

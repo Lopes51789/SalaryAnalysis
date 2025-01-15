@@ -4,8 +4,9 @@ import cleanData
 
 # Clean data and export to json
 df = cleanData.DataFrame("Salary_Data.csv")
-df.convertCategoricalToNumeric()
 df.removeNullValues()
+df.removeDuplicateCategories()
+df.convertCategoricalToNumeric()
 
 json_file = df.toJson()
 

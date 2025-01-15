@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 #SQL Updates
-*.sql
+#*.sql
 
 # Distribution / packaging
 .Python
